@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      box-sizing: ;
+    }
+    .type-contianer{
+      padding: 20px;
+    }
+    .parent{
+      width: 80%;
+      height: 500px;
+      background-color: #00c;
+    }
+    #abpParent{
+      position: relative;
+
+    }
+    #abpChild{
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-color: #a33;
+    }
+
+    #abtParent{
+      position: relative;
+    }
+    #abtChild{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 50%;
+      height: 50%;
+      background-color: #a33;
+    }
+
+    #abmParent{
+      position: relative;
+    }
+    #abmChild{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      margin: -150px;
+      background-color: #a33;
+    }
+  </style>
+</head>
+<body>
+<h4>css水平垂直居中</h4>
+  <div class="type-contianer">
+    <h5>方法1:内外层宽高不固定,absolute+padding</h5>
+    <h5>优略:内层宽高不固定最高仅限于可设置百分比，不可不设置宽度高度的自适应写法，否则会占满parent,优点兼容性比第二种方法高。</h5>
+    <div id="abpParent" class="parent">
+      <div id="abpChild" class="child"></div>
+    </div>
+  </div>
+  <div class="type-contianer">
+    <h5>方法2:内外层宽高不固定,absolute+transform</h5>
+    <h5>兼容性:ie9以上版本,ie9:-ms-transform;safari&chrome:-webkit-transform,不考虑兼容性最无脑办法。</h5>
+    <div id="abtParent" class="parent">
+      <div id="abtChild" class="child"></div>
+    </div>
+  </div>
+  <div class="type-contianer">
+    <h5>方法3:内层宽高已知,外层不一定,absolute+margin</h5>
+    <h5>优略:兼容性好,缺点需要固定子元素的大小,在子元素可固定大小的情况下,使用该方法,不需考虑兼容性。</h5>
+    <div id="abmParent" class="parent">
+      <div id="abmChild" class="child"></div>
+    </div>
+  </div>
+</body>
+</html>

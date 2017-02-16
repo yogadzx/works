@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {
+        name:"dzx"
+    };
+    console.log(Object.prototype);
+    //所有通过对象直接量创建的对象，都具有同一个原型对象Object.prototype.
+    //使用new 构造函数创建的对象，对象的原型就是构造函数的prototype属性的值.
+    console.log(Date.prototype);
+    console.log(Object.create(Object.prototype));
+    //使用Object.create(prototype)创建对象，参数null与Object.prototype的区别，填入null时，创建的对象为一个空对象，不继承任何属性。
+    //填入Object.prototype时，创建的对象与new Object 和直接量{}的结果相同，继承Object.prototype的属性。
+    //各个内置对象的继承链顶端均为Object.prototype。
+</script>
+</body>
+</html>

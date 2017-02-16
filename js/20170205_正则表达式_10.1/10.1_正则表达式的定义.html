@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>正则表达式的定义</h3>
+    <div>
+        正则表达式的斜括号为/,转义字符为\，因为正则更常用，所以／被安排在顺手的位置（一本正经胡说八道系列. <br>
+        var literal = /s$/;
+        var constructor = new RegExp("s$");上下等价，一个是直接量方法，一个是构造函数创建正则对象。 <br>
+        <script>
+            var text = '"whatyounamemynameok"';
+            var textb = "";
+            var quote = /"(\w*)"/g;
+            console.log(text.match(quote));
+            var latterText = text.replace(quote,'“$1”');
+            console.log(latterText);
+        </script>
+    </div>
+</body>
+</html>

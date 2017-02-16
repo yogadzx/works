@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <pre>
+            1 web浏览器创建document对象，解析web页面，此时document。readyState属性值为loading。
+            2 没有 async和defer属性的script元素时，会执行脚本，解析器等待脚本执行（脚本可以访问之前的文档树）。
+            3 遇到 async属性的script元素时，解析器不等待（脚本不可以访问文档树）。
+            4 当文档解析完成 document。readyState属性变为 interactive。
+            5 运行defer 脚本时，可以访问完整文档树。
+            6 触发DOMContentLoaded事件
+            7 继续加在图片和视频的内容，完成后，document。readystate属性值为complete 触发window对象上的load事件。
+        </pre>
+    </div>
+</body>
+</html>

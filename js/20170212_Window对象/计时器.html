@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //当setTimeout（f， 0）调用时，并不意味着立马执行f函数，而是把f函数放入《《 队列 》》中，当前面所有程序运行完后立即调用f。
+    function conso() {
+        console.log(new Date());
+    }
+    function invoke(f, start, interval, end) {
+        if (!start) start = 0;
+        if (arguments.length <= 2) {
+            setTimeout(f, start);
+        }
+        else {
+            setTimeout(repeat, start);
+            function repeat() {
+                var h = setInterval(f, interval);
+                if (end) {
+                    setTimeout(function() {
+                        clearInterval(h);
+                    }, end);
+                }
+            }
+        }
+    }
+    invoke(conso,0,1000,10000);
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h4>闭包</h4>
+    <div>
+        闭包：函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内。<br>
+        从技术角度来看，所有js的函数都是闭包。函数定义时的作用域链到执行时依然有效。<br>
+        同一个作用域链的多个闭包，共享同样的变量。不同的作用域链的闭包，不共享。<br>
+        由于返回函数无法找到外层函数的this和arguments，所以如果使用，需要从外层函数传入。<br>
+    </div>
+    <h4>函数的length属性</h4>
+    <div>
+        arguments.callee.length：形参个数 <br>
+        arguments.length：实参个数 <br>
+    </div>
+    <h4>call和apply（ecma3）</h4>
+    <div>
+        call 和 apply返回的是值。<br>
+        call 第一个参数之后为需要的实参<br>
+        apply 第一个对象之后为实参对象<br>
+    </div>
+    <h4>bind （ecma5）</h4>
+    <div>
+        bind方法返回的是一个新函数。<br>
+        标准bind方法，用于ecma3，如例4。<br>
+        当bind方法返回的函数作为构造函数使用时，将忽略传入bind（）中的this，而参数照旧执行柯里化。<br>
+    </div>
+    <script>
+        function out(old){
+            console.log(this);
+            console.log(arguments);
+            var that = this;
+            return function(){
+                console.log(arguments);
+                console.log(that);
+            }
+        }
+        var b = {name:'b'};
+        b.out = out;
+        var where = b.out(22);
+        where();
+
+        (function(a, b, c){
+         console.log(arguments.callee.length);
+         console.log(arguments.length);
+        }());
+
+        //call & apply
+        function trace(o, m){
+            var original = o[m];
+            o[m] = function() {
+                console.log(new Date(), "Entering:", m);
+                console.log(this);
+                var result = original.apply(this,arguments);
+                console.log(result);
+                console.log(new Date(), "Exiting:", m);
+                return result;
+            };
+        };
+        var o = {
+            m:function() {
+                console.log(this);
+            }
+        };
+        trace(o,"m");
+        o.m();
+
+        //例4:bind for ecma3
+//        if(!Function.prototype.bind){
+//            Function.prototype.bind = function(o /*, arguments */){
+//                var thisFun = this; thisArgs = arguments;
+//                return function(/*arguments*/){
+//                    var args = [];
+//                    for(i = 0; i < arguments.length; i++) args.push(arguments[i]);
+//                    for(i = 1; i < thisArgs.length; i++) args.push(thisArgs[i]);
+//                    return thisFun.apply(o, args);
+//                };
+//            };
+//        }
+
+        //例5 bind 返回的函数做构造函数
+        var obj = {old:23, x:1};
+        var constructor = function(b, a){
+            this.name = "dzx";
+            this.old = b;
+            this.where = a;
+        };
+        var sum = function(y){
+          return this.x + y
+        };
+        var newCON = constructor.bind(obj,22);
+        var newSum = sum.bind(obj);
+        var newObj = new newCON("beijing");
+        console.log(newObj);
+        console.log(newSum(2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h4>Array API for ECMA5</h4>
+    <div>
+        ecma的数组方法第一个参数为一个函数，数组每个元素都会调用该函数，第二个参数制定函数的this。<br>
+        第一个参数函数拥有三个参数，数组元素，元素索引，数组本身。
+        <h6>array.forEach</h6>
+        <div>
+            该方法将调用数组的每个元素执行参数函数，forEach不具备break,continue  语句，使用这两个语句会报错 <br>
+            如果想要提前终止，使用try语句，如例1。
+            无返回值。可以修改原数组。
+        </div>
+        <h6>array.map()</h6>
+        <div>
+            该方法与forEach类似，不同点在于map返回一个新数组，并不修改原数组。
+            return
+        </div>
+        <h6>array.filter()</h6>
+        <div>
+            该方法用于过滤，符合传入参数函数判定的元素将被返回组成新的数组。
+            return
+        </div>
+        <h6>array.every();array.some()</h6>
+        <div>
+            这两种方法用用于逻辑判定数组中的元素，every全部符合，返回true，否则false；<br>
+            some()只要有符合就返回true。
+        </div>
+        <h6>array.reduce();array.reduceRight()</h6>
+        <div>
+            方法用于简化，第一个参数为逻辑函数，第二参数为初始值，reduce处理过程从数组左侧到右侧，reduceRight与前者相反。
+            逻辑函数的两参数（a，b）a为初始值或数组第一个元素，每进行一次逻辑运算后a为上次运算的返回值，b为数组下一个索引元素。
+        </div>
+        <h6>array.indexOf();array.lastIndexOf()</h6>
+        <div>
+            在数组中查找参数，如果找到，返回第一个元素的索引位置，如果没有找到该元素，返回-1；两种方法起始点不同，前者从左侧，后者右侧。
+        </div>
+    </div>
+    <h4>isAarry</h4>
+    <div>
+        ECMA5提供了检测对象是否为数组的方法：Array.isArray(o);<br>
+        ECMA3 使用Object.prototype.toString.call(o)==="[object Array]" 万能方法，检测首用方法。
+    </div>
+<script>
+    //例1
+    var a = [1,2,3,4,5];
+    try{a.forEach(function(i){
+        if(a[i]===3){
+        throw new Error('ok man!');
+    }
+    })} catch(e){
+        console.log(e);
+        throw e
+    }
+</script>
+</body>
+</html>

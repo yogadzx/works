@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {
+        name:"dzx",
+        age:"22",
+        gender:"man"
+    };
+    console.log(obj["name"]);
+    //obj[param]中的参数必须是一个计算结果为字符串的表达式。
+    //如果中的属性名是保留字需要使用引号。
+    var objfor = {
+        "for":"dzx",
+        123:"value"
+    };
+    console.log(objfor[123]);
+    //ECMA3 点运算符后不能是保留字，如果对象中有保留字的属性名，需要使用[]来访问。ECMA5放款了要求。
+</script>
+</body>
+</html>

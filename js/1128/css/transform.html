@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .canvas{
+      width:50%;
+      height:400px;
+      margin: 0 auto;
+      border:1px solid #000;
+    }
+    .component{
+      width: 50px;
+      height: 50px;
+      background-color: #0e0;
+      transition: transform 3s;
+    }
+    .component:hover{
+      transform : translate(100px,100px);
+      /*animation : transform 3s 4;*/
+    }
+    /*@keyframes transform {*/
+      /*0% {width: 0;height: 0}*/
+      /*50%{width: 50px;height: 50px}*/
+      /*100%{width: 100px;height: 100px}*/
+    /*}*/
+    /*关于css过渡(transition)与动画(animation)*/
+    /*1.过渡:*/
+    /*transition 用于0-1的效果 且只能有一种效果。可与转换搭配*/
+    /*转换:transform (translate rotate scran)*/
+    /*2.动画:*/
+     /*animation @keyframes 搭配使用,*/
+    /*可在一次动画中设置不同效果。*/
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="component"></div>
+  </div>
+</body>
+</html>

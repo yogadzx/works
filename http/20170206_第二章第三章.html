@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>简单的http协议</h3>
+    <div>
+        http是无状态协议，不能记忆上一个http请求内容，为此推出cookie <br>
+        http 方法有：GET 、POST、PUT、DELETE、 <br>
+        HEAD:与get类似，只不过不返回报文主体，用于确认uri的有效性和资源更新日期等 <br>
+        OPTIONS:询问uri指定的资源支持方法 <br>
+        TRACE（追踪路径）、CONNECT（使用隧道协议）<br>
+        持久连接（http1.1默认，在通信中一端没有提出断开，tcp就保持连接状态）和管道化（并行处理）<br>
+    </div>
+    <h3>报文内的http信息</h3>
+    <div>
+        请求报文和响应报文由：报文首部（请求行、状态行、首部字段、其他）、报文主体。 <br>
+        报文实体 通过压缩变为 报文主体（如果不压缩，主体和实体内容一样），报文主体分割成多个以便逐步显示。<br>
+    </div>
+</body>
+</html>

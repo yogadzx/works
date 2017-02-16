@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = new Array();
+    var b = Object.create(Array.prototype);
+    //如果只是验证原始类型，可以使用typeof，内置对象中只有function typeof结果是function，其它都为object
+    console.log(typeof 1);
+    console.log(typeof '1');
+    console.log(typeof true);
+    console.log(typeof null);
+    console.log(typeof undefined);
+    console.log(typeof NaN);
+    console.log(typeof new Date());
+    console.log(typeof [1]);
+    console.log(typeof function(){});
+    //instanceof 适用于判断，不能通过实例对象找到类，且instanceof检测的是继承关系。
+    //true
+    console.log([] instanceof Object);
+    console.log([] instanceof Array);
+    function First() {
+        this.where = "beijing"
+    }
+    var f = new First();
+
+    function Second() {
+        this.name = "dzx"
+    }
+    Second.prototype = f;
+    Second.prototype.constructor = Second;
+//    如果子类没有重写constructor属性，则实例的construtor由继承的原型而来
+    var c = new Second();
+    console.log(c instanceof Second);
+    console.log(c instanceof First);
+    //false
+    console.log(1 instanceof Number);
+    console.log(String('123') instanceof String);
+    //constructor.prototype 使用 constructor.prototype.constructor 来获得类型
+    console.log([].constructor.prototype);
+    console.log(a.constructor.prototype.constructor);
+    console.log(b.constructor);
+    console.log({}.constructor.prototype);
+    //Object.prototype.toString().call(),返回值[object type],如果判断类型，最优方法
+    console.log(Object.prototype.toString.call("123"));//[object String]
+
+</script>
+</body>
+</html>

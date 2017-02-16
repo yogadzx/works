@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <h4>乘法口诀（二维数组）<!--例1--> </h4>
+ <h4>Array API for ECMA3</h4>
+ <div>
+     <div>Array.join("str"):将数组元素拼接成字符串，可选用于每个元素之间的连接字符串str，如果不选择str，默认使用"，"进行连接。join是Array.split（）的逆向操作</div>
+     <div>Array.reverse():将数组元素颠倒</div>
+     <div>array.sort():数组顺序将按照字母表顺序排序；还可以根据排序内容需要，传入比较函数，其中有a，b两个参数，比较函数返回值为&lt0时a排在b前面,值相等返回0</div>
+     <div>array.concat(barray);创建并返回一个新数组，内容为将array与barray拼接，不会修改原数组</div>
+     <div>array.slice(a,b)：返回一个新数组，新数组是原array的片段，参数a，b为截取起点位置与终点位置。</div>
+     <div>array.splice(a,b,..):该方法用于插入或删除数组元素，且修改原数组，方法返回删除的元素，a为起始位置，b为删除个数，后面的参数将从该位置插入。</div>
+     <div>array.push & pop;array.unshift & shift :返回数组长度，修改原数组，前者从后面推入推出，后者从前推进，推出。</div>
+     <div>array.toString()：与array.join()不带参数效果相同</div>
+ </div>
+ <script>
+     //例1
+     var table = new Array(10);
+     for(var i = 0;i<table.length;i++) {
+         table[i] = new Array(10);
+     }
+     for(var row = 0;row < table.length;row++){
+         for(var col = 0;col<table[row].length;col++){
+             table[row][col]=row*col;
+         }
+     }
+     console.log(table[3][5]);
+ </script>
+</body>
+</html>

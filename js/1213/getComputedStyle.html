@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #needstyle{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+        #needstyle:active{
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div id="needstyle" style="border:1px solid #ee5523;"></div>
+    <script>
+        var div = document.getElementById("needstyle");
+//        console.log(div.style.background);
+        //element.style.property 只适用于内联样式，可读可写。
+        console.log(window.getComputedStyle(div,':active').background);
+        //window.getComputedStyle(element.pseudoElt) 可获得该元素所有样式,第二个参数为伪元素（非伪类）例如：after，：before。且只用于读取。
+    </script>
+</body>
+</html>

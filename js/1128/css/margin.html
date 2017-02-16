@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="fth">
+    1.ie6双边距问题：
+    产生的条件是：block元素+浮动+margin。
+    解决方法：使用display：inline；或者是去掉float。
+
+    2.margin重叠问题：
+    水平边距永远不会重叠，垂直边距会在特定情况下产生重叠。
+    产生的条件是：父子级div关系。
+    解决方法：1,在父级套border；
+    2,父子级任意一个display：inline-block或者添加float属性；
+  </div>
+  <div style="float:left; width: 50px;height: 50px;background-color:#33acfe; margin:10px;">
+    <div style=" width: 30px;height: 30px;background-color:#7b007b; margin:10px;"></div>
+  </div>
+
+</body>
+</html>

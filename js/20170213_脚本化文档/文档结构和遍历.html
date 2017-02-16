@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //返回元素e的第n层祖先元素，如果不存在此类祖先或祖先不是element，返回null
+    //如果n为0，返回e本身，n为1，返回父元素，n为2，返回祖父元素，以此类推
+    function parent(e, n) {
+        if(n === undefined) n = 1;
+        while(n-- && e) e = e.parentNode;
+        if(!e || e.nodeType !== 1) return null;
+        return e;
+    }
+
+    //    返回元素e的第n个兄弟元素
+    //    如果n为正，返回后续的第n个兄弟元素
+    //    如果n为负，返回前面的第n个兄弟元素
+    //    如果n为0，返回e本身
+    function sibling(e, n) {
+        while(e && n !== 0){
+            if(n > 0){
+                if (e.nextElementSibling) e = e.nextElementSibling;
+                else {
+                    for(e = e.nextSibling; e && e.nodeType !== 1; e = e.nextSibling);
+                }
+                n--;
+            }
+            else{
+                if (e.previousElementSibling) e = e.previousElementSibling;
+                else {
+                    for(e = e.previousElementSibling; e && e.nodeType !==1; e = e.previousElementSibling);
+                }
+                n++;
+            }
+        }
+        return e;
+    }
+
+    //返回元素e的第n个子元素，如果不存在则为null；
+    function child(e, n) {
+        if (e.children) {
+            if (n < 0) n += e.children.length;
+            if (n < 0) return null;
+            return e.children[n];
+        }
+        if (n >= 0 ) {
+            if (e.firstElementChild) e = e.firstElementChild;
+            else {
+                for(e = e.firstChild; e && e.nodeType !== 1; e = e.nextSibling);
+            }
+            //找到第一个element元素后，查找该元素的第n个兄弟元素；
+            return sibling(e, n);
+        }
+        else {
+            if (e.lastElementChild) e = e.lastElementChild;
+            else {
+                for(e = e.lastChild; e && e.nodeType !== 1; e = e.previousSibling);
+            }
+            return sibling(e, n+1);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //创建对象的方法共有4种：
+    //1 对象直接量
+    var objectOne = { name : "dzx" };
+    //2 通过new 创建对象：
+    var objectTwo = new Object("dzx");
+    console.log(objectTwo);
+    //3 通过原型
+    //4 Object.creat():
+    var objectThr = Object.create({name : "dzx"}, {age : {value : 23, enumerable : false}});
+    console.log(objectThr);
+    console.log(objectThr.age);
+    //如果浏览器低于ie9 可用该方法模拟Object.creat
+    function inherit(p) {
+        if (p == null) throw TypeError();
+        if (Object.create)
+            return Object.create(p);
+        var t = typeof p;
+        if (t !== "object" && t !== "function") throw TypeError();
+        function f() {};
+        f.prototype = p;
+        return new f();
+    }
+</script>
+</body>
+</html>

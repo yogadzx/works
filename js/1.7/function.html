@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>function语句提前（hoist）</h4>
+<div>
+    使用函数声明语句可提前 <br>
+    <code>
+        function fun(){}
+    </code>
+    <br>
+    使用函数表达式，不可在表达式之前调用函数 <br>
+    <code>
+        var fun = function (){}
+    </code>
+</div>
+<h4>函数调用</h4>
+<div>
+    表达式普通调用，在ecam3和非严格的ecma5下，调用函数的上下文是全局对象，严格模式为undefined <br>
+    当方法不需要返回值时，最好返回this，方便方法链。
+</div>
+<h4>this</h4>
+<div>
+    this不具有继承性，嵌套函数不会保留this，当嵌套函数被调用时，跟普通函数调用一样。<br>
+    普通调用this不是全局就是undefined，方法调用时，this是调用他的对象。
+</div>
+<h4>构造函数调用</h4>
+<div>
+    如果构造函数没有形参，那么调用构造函数时可省略（）；<br>
+    如果构造函数有 return 一个对象，那么构造函数返回这个对象。<br>
+    <code>
+        var o = {name : "what"}
+        function structor(){
+        this.name ="dzx";
+        return o
+        }
+    </code> <br>
+</div>
+<script>
+    //关于声明提前hoist
+    //同样声明提前的语句，按照顺序依次声明
+//    var i = 1;
+//    fun();
+//    function fun(){
+//        console.log('ok' + i++);
+//    }
+//    fun();
+
+    //
+//    fun();
+//    var i = 1;
+//    function fun(){
+//        console.log('ok' + i++);
+//    }
+//    fun();
+
+</script>
+</body>
+</html>

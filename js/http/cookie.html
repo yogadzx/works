@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="users"></div>
+<script>
+//  在Javascript中，cookie用来保存状态以及能够为Web浏览器提供一种身份是别机制。
+// 设置，获得，删除 只有一种方法 document.cookie ,通过设置过期事件来达到设置和删除的目的。
+//设置果期时间有两种方法 max-age 和 Expires ，一个相对时间，一个绝对时间。
+//使用max-age : max-age = xx秒;
+//使用expires :expires = new Date();
+//  var user = parseInt((Math.random()) * 10);
+//  var Cookie = {
+//         del =
+//  }
+//  console.log(user);
+//  var expires = new Date();
+//  expires.setFullYear(2017,6,31);
+//if(!document.cookie){
+//  console.log("no");
+//  document.cookie = "user="+user+";expires="+expires;
+//}
+//  document.cookie = "wtf=you;mark=dd;max-age=3600";
+  document.getElementById('users').innerHTML=document.cookie;
+
+  //封装cookie操作
+  var Cookie = {
+    del : function(attribute){
+      document.cookie = attribute+';max-age=0';
+    },
+    set : function(attribute,value,time){
+      if(typeof (time)==="object"){
+        document.cookie = attribute+'='+value+';expires='+time;
+      }else{
+        document.cookie = attribute+'='+value+';max-age='+time;
+      }
+    },
+    strToObj : function(){
+      var cookieStr = document.cookie;
+      var groups = cookieStr.replace(" ",'').split(';');
+      var cookieObj = {};
+      groups.forEach(function(group){
+        var keyName = group.split('=')[0];
+        var keyValue = group.split('=')[1];
+        cookieObj[keyName]=keyValue;
+      });
+      return cookieObj
+    },
+    get : function(attribute){
+      var cookieObj = this.strToObj();
+      return cookieObj[attribute];
+    }
+  };
+  var date = new Date();
+  date.setFullYear(2018);
+  Cookie.set("gary","missmeng",date);
+  //移动端字体缩放问题 text-size-adjust
+  //
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h4>Class</h4>
+    <div>
+        前提：js每一个函数都有prototype对象，该对象有一个不可枚举的属性constructor<br>
+        关于对象的constructor属性：<br>
+        1 ，如果构造函数的原型对象是来自对象直接量"{}"创建的对象，<br>
+        那么该对象的constructor 为function Object() { [native code] } 也就是Object构造函数 <br>
+        也就是说：如果想要当前构造函数的实例对象constructor保存当前构造函数，<br>
+        那么需要在直接量的原型对象中，显示的创建constructor：构造函数名。<br>
+
+        2，如果一个构造函数没有手动指定其原型，那么该构造函数的实例constructor保存着该构造函数 <br>
+
+        3，如果一个实例的构造函数的原型，由另一个构造函数实例化创建，那么当前的实例对象的constructor属性会保存最顶曾构造函数，<br>
+        而非该实例的构造函数。<br>
+    </div>
+    <script>
+        function creatA() {
+            this.name = "A";
+        };
+        creatA.prototype = {
+//            constructor:creatA,
+            console:function () {
+                console.log(this.name);
+                console.log(this.constructor);
+            }
+        };
+        var a = new creatA();
+        a.console();
+        //
+        function origin() {
+          this.fromCome = "origin"
+        };
+        var org = new origin();
+        console.log(org.constructor);
+        //
+        function creatB() {
+            this.name = "B";
+        };
+        creatB.prototype = org;
+        var b = new creatB();
+        console.log(b.constructor);
+    </script>
+</body>
+</html>

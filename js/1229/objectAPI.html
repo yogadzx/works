@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        object.hasOwnProperty("p"）检测p是否为自有属性，非继承属性。<br>
+        object.propertyIsEnumerable("p")检测p是否为自有属性，且可枚举。<br>
+
+        Object.keys(o) 返回可枚举属性名称的数组 ecma5<br>
+        Object.getOwnPropertyNames(o) 返回可枚举且是自有属性的属性名称数组 ecam5<br>
+
+        Object.getOwnPropertyDescriptor(object,"属性名") 返回该对象属性名的属性描述 ecma5 （value,writable,enumerable,configurable）
+        且只能的到自有属性的属性描述<br>
+
+        Object.definePeoperty(object，"属性名"，{}) ecma5 设置对象某属性名的属性特性<br>
+        Object.defineProperties(object,{}) 设置多个属性的特性 ecma5<br>
+
+        Object.getPrototypeOf(object) 查询对象的原型 ecma5<br>
+        object.constructor.prototype 查询对象的原型 ecma3<br>
+        <br>
+        注意⚠️：通过new 或直接量创建的对象，会保存一个constructor的属性，该属性记录着对象的构造函数。
+        <br>
+        prototype属性为构造函数的属性，而不是对象的属性。
+        <br><br>
+        p.isPrototypeOf(o) 检查p是不是o的原型 ecma5<br>
+        JSON.stringify(s)  将对象序列化，转为字符串<br>
+        JSON.parse(s) 将字符串还原成对象<br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #contianer{
+      width: 80%;
+      height: 4000px;
+      border:1px dashed #000;
+    }
+    aside{
+      position: fixed;
+      top:50%;
+      right:1%;
+    }
+    .red{
+      width: 100%;
+      height: 1000px;
+      background-color: red;
+    }
+    .yellow{
+      width: 100%;
+      height: 1000px;
+      background-color: yellow;
+    }
+    .green{
+      width: 100%;
+      height: 1000px;
+      background-color: green;
+    }
+    .blue{
+      width: 100%;
+      height: 1000px;
+      background-color: blue;
+    }
+    #toTop{
+      width: 30px;
+      height: 30px;
+      border:1px solid #0e0;
+    }
+  </style>
+</head>
+<body>
+  <div id="contianer">
+    <div class="red"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+  </div>
+  <aside>
+    <div id="toTop">top</div>
+  </aside>
+  <script>
+    var toTop = document.getElementById('toTop');
+    var scroll = function (){
+      document.body.scrollTop;
+      if(document.body.scrollTop>1){
+        document.body.scrollTop-=400;
+        setTimeout(scroll,50);
+      }
+    };
+    toTop.addEventListener('click',scroll);
+  </script>
+</body>
+</html>

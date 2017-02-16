@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="height: 10000px">
+    <div style="height: 100px; width: 100px"></div>
+    <script>
+        //查询窗口滚动条位置
+        function getScrollOffsets(w) {
+            w = w | window;
+
+            if (w.pageXOffset != null) {
+                return {x: w.pageXOffset, y: w.pageYOffset};
+            }
+            var d = w.document;
+            if (document.compatMode == "CSS1Compat") {
+                return {x:d.documentElement.scrollLeft, y:d.documentElement.scrollTop};
+            }
+            return {x:d.body.scrollLeft, y:d.body.scrollTop};
+        }
+        //查询窗口视口尺寸
+        function getViewportSize(w) {
+            w = w | window;
+            if (w.innerWidth != null) return {w:w.innerWidth,h:w.innerHeight};
+            var d = w.document;
+            if (document.compatMode == "CSS1Compat") {
+                return {w:d.documentElement.clientWidth, h:d.documentElement.clientHeight};
+            }
+            return {w:d.body.clientWidth, h:d.body.clientHeight};
+        }
+
+        //页面跳转时，确定是否离开。
+        window.onbeforeunload = function () {
+            return "你确定离开吗？";
+        }
+    </script>
+</body>
+</html>

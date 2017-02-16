@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="echo"></div>
+<script>
+  window.addEventListener('load',function(){
+    var xmlhttp = window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject('Microsoft.XMLHTTP');
+    xmlhttp.open("GET",'node.js',true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange=function(){
+      if(xmlhttp.readyState==4 && xmlhttp.status==200){
+        console.log(xmlhttp.responseText);
+      }
+    }
+  })
+</script>
+</body>
+</html>
