@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>GET和POST方法的区别</h3>
+    <pre>
+        get：从资源请求数据
+        会被缓存
+        有长度限制 几千字节
+        数据在url中显示 安全性差
+        post：发送数据到服务器
+        不会被缓存
+        没有长度限制
+        数据在请求体中
+    </pre>
+    <script>
+        //完整到ajax请求
+        function ajax(msg) {
+            var request = new XMLHttpRequest();
+            request.open("GET", "/index.php");
+            //如果使用post 需要指定mime类型
+            request.setRequestHeader("Content-Type","text/plain;charset=UTF-8");
+
+            //监听readystate
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200){
+                    var type = request.getResponseHeader("Content-Type");
+                    if(type.match(/^text/)){
+                        //...
+                    }
+                }
+            };
+            //POST发送数据
+            request.send(msg);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getRequest() {
+        if (window.XMLHttpRequest) return new XMLHttpRequest();
+        else {
+            try {
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            }catch (e) {
+                throw new Error("XMLHttprequest is not supported");
+            }
+        }
+    }
+</script>
+</body>
+</html>

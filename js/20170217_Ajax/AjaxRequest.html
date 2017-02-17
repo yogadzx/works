@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>XMLHttprequest对象api</h3>
+    <pre>
+        request = new XMLHttpRequest()
+        request.open("method","url",boolen) 第三个参数将决定是否异步，默认true，使用异步
+        request.setRequestHeader() 设置请求头字段
+        request.send()  发送数据给服务器
+        request.getResponseHeader("字段") 得到响应头的字段值
+        request.getAllResponseHeader ...
+        request.responseText 得到响应主体
+    </pre>
+    <script>
+        //响应解码
+        function get() {
+            var request = new XMLHttpRequest();
+            request.open("GET",url);
+            request.onreadystatechange = function() {
+                if (request.readyState ==4 && request.status ==200){
+                    var type = request.getResponseHeader("Content-Type");
+                    if (type.indexOf("xml") !== -1 &&request.responseXML){
+                        //xml响应
+                        callback(request.responseXML);
+                    }else if (type === "application/json"){
+                        //JSON响应
+                        callback(JSON.parse(request.responseText))
+                    }else {
+                        //text文本
+                        callback(request.responseText);
+                    }
+                }
+            };
+            request.send(null);
+        }
+    </script>
+</body>
+</html>
