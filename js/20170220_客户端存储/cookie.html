@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <pre>
+        cookie相对于web存储，优点在于api兼容好
+        检测浏览器cookie是否可用： navigator.cookieEnabled
+        cookie有效期：默认为浏览器对话期间，设置有效期 max-age
+        作用域：默认同源且路径不高于当前目录，设置目录 path 设置主机 domain
+        cookie设置： document.cookie=...
+        由于cookie中的名值对不允许包含分号，逗号，空白符。所以设置属性值前，应该编码后在存储
+        编码：encodeURIComponent
+        解码：devodeURIComponent
+
+        cookie的局限性：
+        浏览器对cookie数量有限制
+        对cookie内容有4kb大小限制
+    </pre>
+</body>
+</html>
