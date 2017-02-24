@@ -3,8 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .box {
+            display: flex;
+            flex-flow: row wrap ;
+            align-items: flex-start;
+            align-content: flex-start;
+            column-count: 4;
+            column-gap: 10px;
+            column-span: none;
+        }
+        .itms {
+            margin:20px ;
+            flex: 0 0 200px;
+            width: 100px;
+            height: 100px;
+            background-color: #7b007b;
+        }
+        .itms2 {
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
+<div>
+    <pre>
+        flex布局
+        父容器属性：
+        flex-direction：row | row-reverse | column | column-reverse; 决定主轴方向
+        flex-wrap: nowrap | wrap | wrap-reverse
+        flex-flow: flex-direction | flex-wrap
+        justify-content: 主轴居中方式
+        align-items: 交叉轴剧中方式
+        align-content ：多轴居中方式
 
+        order：子元素排列，越低越靠前
+        flex-grow ：扩大比例
+        flex-shrink： 缩小比例
+        flex-basis：最小尺寸
+        flex ：flex-grow flex-shrink flex-basis
+        align-self : 单元素交叉轴对其方式
+    </pre>
+</div>
+<div class="box">
+    <div class="itms">
+
+    </div>
+    <div class="itms itms2"></div>
+    <div class="itms"></div>
+    <div class="itms itms2"></div>
+    <div class="itms"></div>
+</div>
 </body>
 </html>

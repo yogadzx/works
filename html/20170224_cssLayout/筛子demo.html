@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .face {
+            width: 104px;
+            height: 104px;
+            display: flex;
+            padding: 4px;
+            margin: 10px;
+            background-color: #fff;
+            border: 2px solid gray;
+            border-radius: 10px;
+        }
+        .items {
+            width: 24px;
+            height: 24px;
+            margin: 4px;
+            background-color: #000;
+            border-radius: 12px;
+        }
+        .second-face {
+            justify-content: space-between;
+        }
+        .second-face>.items:nth-child(2) {
+            align-self: flex-end;
+        }
+        .third-face {
+            justify-content: space-between;
+        }
+        .third-face>.items:nth-child(2) {
+            align-self: center;
+        }
+        .third-face>.items:nth-child(3) {
+            align-self: flex-end;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .fourth-face {
+            justify-content: space-between;
+        }
+        .fourth-face>.column>.items:nth-child(2){
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="face first-face">
+        <div class="items"></div>
+    </div>
+    <div class="face second-face">
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
+    <div class="face third-face">
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
+    <div class="face fourth-face">
+        <div class="column">
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+        <div class="column">
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+    </div>
+</body>
+</html>

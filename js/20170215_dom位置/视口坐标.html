@@ -11,13 +11,18 @@
         function getScrollOffsets(w) {
             w = w | window;
 
+            //ie9以上版本，和其他浏览器
             if (w.pageXOffset != null) {
                 return {x: w.pageXOffset, y: w.pageYOffset};
             }
             var d = w.document;
+
+            //标准模式浏览器
             if (document.compatMode == "CSS1Compat") {
                 return {x:d.documentElement.scrollLeft, y:d.documentElement.scrollTop};
             }
+
+            //怪异模式
             return {x:d.body.scrollLeft, y:d.body.scrollTop};
         }
         //查询窗口视口尺寸

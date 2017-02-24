@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #t1{
+            padding:10px;
+            background-color: #ee5523;
+            background-position: 10px 10px;
+            background-origin: content-box;
+            background-image: url(panda.jpg);
+            background-repeat: no-repeat;
+            background-clip: content-box;
+            background-size: 40px 40px;
+            background-attachment: scroll;
+            box-shadow: -5px 10px 5px red;
+        }
+    </style>
 </head>
 <body>
+    <div>
+        background-attachment : <br>
+        fixed与scroll的区别：fixed固定于浏览器窗口，scroll固定于设置背景的元素。
+    </div>
+    <textarea cols="10" rows="5" id="t1"></textarea>
 
 </body>
 </html>
