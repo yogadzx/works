@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--password-->
+<form action="">
+    <label for="pwd">Password: <input type="password" id="pwd"></label>
+    <input type="search">
+    <div   id="showPwd" style="display: inline-block">
+    显示密码
+    </div>
+</form>
+<!--input button 不同点-->
+<div>
+    input型按钮 ，兼容性比button好（低于ie6）；
+    button型按钮，可以添加其他标签在显示内容上。
+</div>
+<script>
+    var showButton = document.getElementById("showPwd");
+    var pwd = document.getElementById("pwd");
+    showButton.onmousedown = function () {
+        console.log(pwd.type);
+        pwd.type = "text"
+    };
+    showButton.onmouseup = function () {
+        pwd.type = "password"
+    }
+</script>
+</body>
+</html>
