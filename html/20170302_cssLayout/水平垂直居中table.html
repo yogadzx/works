@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .container {
+            width: 600px;
+            height: 300px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            border: 1px solid #ee5523;
+        }
+        .items {
+            /*display: inline-block;*/
+            background-color: #00ee00;
+        }
+    </style>
 </head>
 <body>
-
+    <div class="container">
+        <div class="items">1231231</div>
+    </div>
+    <pre>
+        不建议使用这种方法，语义不明，且父元素需要确定大小。
+    </pre>
 </body>
 </html>

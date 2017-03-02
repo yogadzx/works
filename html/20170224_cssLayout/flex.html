@@ -3,8 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        .container{
+            width: 200px;
+            height: 100px;
+            display: flex;
+            border: 1px solid #00ee00;
+            flex-flow:row wrap;
+            justify-content: space-between;
+        }
+        .items{
+            width: 30px;
+            height: 30px;
+            background-color: #7b007b;
+        }
+    </style>
 </head>
 <body>
+    <div>
+        <pre>
+            flex布局
+            父容器属性：
+            flex-direction：row | row-reverse | column | column-reverse; 决定主轴方向
+            flex-wrap: nowrap | wrap | wrap-reverse
+            flex-flow: flex-direction | flex-wrap
+            justify-content: 主轴居中方式 flex-star|flex-end|space-around|space-between
+            align-items: 交叉轴剧中方式
+            align-content ：多轴居中方式
 
+            order：子元素排列，越低越靠前
+            flex-grow ：扩大比例
+            flex-shrink： 缩小比例
+            flex-basis：最小尺寸
+            flex ：flex-grow flex-shrink flex-basis
+            align-self : 单元素交叉轴对其方式
+        </pre>
+    </div>
+    <div class="container">
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
 </body>
 </html>

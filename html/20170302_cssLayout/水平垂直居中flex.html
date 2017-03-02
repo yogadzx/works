@@ -3,8 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .container {
+            padding: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            border: 1px solid #0000cc;
+            max-height: 500px;
+            overflow: auto;
+        }
+        .items {
+            background-color: #ee5523;
+        }
+    </style>
 </head>
 <body>
-
+<h2>水平垂直居中：用于多行文本，不同形状相册显示效果</h2>
+<h3>使用flex布局实现</h3>
+<h4>Demo1:单行文本或多行文本</h4>
+    <div class="container">
+        <div class="items">
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto, corporis cumque deleniti, ducimus eveniet facere harum inventore libero nobis odit perspiciatis quae recusandae sapiente ut veniam voluptates. Amet, commodi?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci amet, animi at beatae blanditiis deserunt doloremque harum, iure, laboriosam perspiciatis quasi quisquam quos recusandae sapiente sed vel vero vitae?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, at, tempore! Ab, minus nulla placeat quia quis ut voluptatem voluptates. Doloremque eos eveniet explicabo odio velit voluptate voluptates! Quas, vel?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cupiditate delectus doloribus est explicabo omnis totam vitae. Ad, aspernatur beatae blanditiis deserunt dolore, est expedita inventore numquam pariatur, ratione sapiente?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, assumenda delectus dicta, dolore exercitationem hic impedit ipsam libero nam neque officia perferendis quis quo, reiciendis sed vitae voluptas voluptatibus.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium neque rerum sequi soluta! Architecto asperiores consectetur dolorem eaque et ex, expedita explicabo illo nesciunt optio pariatur quas ut voluptatem voluptatum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam asperiores deleniti dignissimos dolorum eligendi et excepturi fugit laborum libero molestiae natus porro provident quia quidem quis, soluta vel, voluptatum.
+        </div>
+    </div>
+    <pre>
+        使用flex为一个块进行水平垂直居中布局有局限性，
+        首先flex兼容性不好，
+        且flex中只有一个子元素，子元素会被拉伸填满整个父元素.
+        所以想实现垂直居中，需要设置padding来拉开间距，align-items: flex-start。
+        如果父元素被要求有最大高度，设置overflow。
+        如果父元素和子元素都不知道宽高的情况下，使用flex更好
+    </pre>
 </body>
 </html>

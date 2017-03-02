@@ -3,8 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .good{
+            color: #ee5523;
+        }
+        .bad{
+            color: #33acfe;
+        }
+        .parent {
+             border:1px solid #00ee00;
+        }
+        .child {
+            background-color: #7b007b;
+        }
+
+        .parent1 {
+            text-align: center;
+        }
+        .child1 {
+            display: inline-block;
+        }
+        .child2{
+            width: 200px;
+            margin: 0 auto;
+        }
+        .child3 {
+            display: table;
+            margin: 0 auto;
+        }
+        .parent4{
+            height: 50px;
+            position: relative;
+        }
+        .child4 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*margin-left: -子元素宽度;*/
+            transform: translate(-50%,-50%);
+        }
+        .parent5 {
+            display: flex;
+            justify-content: center;
+        }
+        .parent6 {
+            width: 200px;
+            height: 60px;
+            display:table-cell;
+            vertical-align:middle;
+            text-align:center;
+        }
+        .child6 {
+            display:inline-block;
+        }
+    </style>
 </head>
 <body>
-
+    <h3>单列布局</h3>
+    <h4>水平居中</h4>
+    <h5>方法1: child:"display:inline-block";parent:"text-align:center" (<span class="good">兼容性好，子容器不定宽</span>;<span class="bad">父子都需设置</span>)</h5>
+    <div class="parent parent1">
+        <div class="child child1">1231231231</div>
+    </div>
+    <h5>方法2: child:"width;margin: 0 auto" (<span class="good">兼容性好</span>;<span class="bad">子容器需要定宽</span>)</h5>
+    <div class="parent parent2">
+        <div class="child child2">1231231231</div>
+    </div>
+    <h5>方法3: child:"display: table; margin: 0 auto" (<span class="good">设置简单.子容器不需要定宽</span>;<span class="bad">对低版本ie兼容性不好</span>)</h5>
+    <div class="parent parent3">
+        <div class="child child3">1231231231</div>
+    </div>
+    <h5>方法4:使用绝对定位+transform  (<span class="good">子容器不需要定宽</span>;<span class="bad">对低版本ie兼容性不好，父容器需要宽高</span>)</h5>
+    <div class="parent parent4">
+        <div class="child child4">1231231231</div>
+    </div>
+    <h5>方法5:flex(<span class="bad">兼容不好</span>)</h5>
+    <div class="parent parent5">
+        <div class="child child5">1231312</div>
+    </div>
+    <h4>垂直居中</h4>
+    <h5>方法1：flex</h5>
+    <h5>方法2：绝对定位</h5>
+    <h5>方法3：table-cell</h5>
+    <h4>水平垂直居中</h4>
+    <h5>方法1：flex</h5>
+    <h5>方法2：绝对定位</h5>
+    <h5>方法3：table-cell</h5>
+    <pre>
+        水平垂直居中flex最自由兼容性最差，position需要父元素高度填充，table-cell需要父元素宽高。
+    </pre>
 </body>
 </html>

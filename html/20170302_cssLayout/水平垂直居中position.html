@@ -3,8 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .parent {
+            border: 1px solid #ee5523;
+        }
+        .child {
+            background-color:#7b007b ;
+        }
+
+        .parent1 {
+            height: 200px;
+            position: relative;
+        }
+        .child1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .photo-wall {
+            display: inline-block;
+            padding: 10px;
+            border: 2px solid gray;
+        }
+        .photo-container {
+            display: inline-block;
+            position: relative;
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ee5523;
+        }
+        .photo {
+            max-width: 160px;
+            max-height: 90px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
-
+<h2>水平垂直居中：用于多行文本，不同形状相册显示效果</h2>
+<h3>使用position方法实现</h3>
+<h4>Demo1:单行文本或多行文本</h4>
+    <div class="parent parent1">
+        <div class="child child1">水平居中的页面布局中最为常见的一种布局形式，多出现于标题，以及内容区域的组织形式</div>
+    </div>
+    <pre>
+        设计思路不论单行或是多行，或是XXX，都将他们当做一块内容。
+        简化为，一块内容在父元素内水平垂直居中。
+        使用position 方法呈现水平垂直居中，可以不固定子元素大小。
+        但是，法需要固定父元素的高度，否则父元素没有内容撑开。
+        由于高度固定，需要小心子元素在窗口大小改变时随着改变而溢出父元素，加overflow：auto。
+        其中子元素宽度一直是父元素的1/2，原因top：50%。
+        除非子元素指定高度，否则为根据宽度自适应。
+    </pre>
+<h4>Demo2:相片墙</h4>
+    <div class="photo-wall">
+        <div class="photo-container">
+            <img class="photo" src="/work/resource/hoho.jpg" alt="萌宠">
+        </div>
+        <div class="photo-container">
+            <img class="photo" src="/work/resource/miao.jpg" alt="萌宠">
+        </div>
+        <div class="photo-container">
+            <img class="photo" src="/work/resource/omg.jpg" alt="萌宠">
+        </div>
+        <div class="photo-container">
+            <img class="photo" src="/work/resource/waiboguai.jpg" alt="萌宠">
+        </div>
+        <div class="photo-container">
+            <img class="photo" src="/work/resource/xiangxiang.jpg" alt="萌宠">
+        </div>
+        <div class="photo-container">
+            <img class="photo" src="/work/resource/dog.jpg" alt="萌宠">
+        </div>
+    </div>
 </body>
 </html>

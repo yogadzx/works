@@ -3,8 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .container {
+            border: 1px solid gray;
+        }
+        .left {
+            background-color: #ee5523;
+        }
+        .right {
+            background-color: #33acfe;
+        }
+    </style>
 </head>
 <body>
-
+    <h3>多列布局</h3>
+    <h4>float+margin</h4>
+    <h5>两列：1列固定，1列自适应</h5>
+    <div class="container">
+        <div class="left" style="word-wrap: break-word;  width: 100px; float:left; background-color: #ee5523;">123123123111111111111111111111111111111111111112</div>
+        <div class="right" style=" margin-left: 100px; ">123</div>
+    </div>
+    <pre>
+        需要注意的是，由于float脱离文档流，所以父元素由自适应元素撑起
+        建议浮动和自适应元素设置同样高度。
+    </pre>
+    <h4>flex</h4>
+    <div>
+        <div>固定高度</div>
+        <div>设置flex：1</div>
+    </div>
+    <pre>
+        所以多列布局建议使用flex，
+        float干扰的因素太多。
+        flex多用于整体布局。
+        flex布局虽好但不能多用。
+    </pre>
 </body>
 </html>
