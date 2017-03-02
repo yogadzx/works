@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 980px;
+            margin: 0 auto;
+            padding-right: 20px;
+        }
+        .row {
+            clear: both;
+        }
+        .col {
+            float: left;
+            margin-left: 20px;
+            width: 60px;
+            background: rgb(255,150,150);
+        }
+        /* 两列宽 (120px) + 1沟槽宽 (20px) */
+        .col.span2 { width: 140px; }
+        /* 三列宽 (180px) + 两个槽宽 (40px) */
+        .col.span3 { width: 220px; }
+        /* 凡此种种，不列举... */
+        .col.span4 { width: 300px; }
+        .col.span5 { width: 380px; }
+        .col.span6 { width: 460px; }
+        .col.span7 { width: 540px; }
+        .col.span8 { width: 620px; }
+        .col.span9 { width: 700px; }
+        .col.span10 { width: 780px; }
+        .col.span11 { width: 860px; }
+        .col.span12 { width: 940px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col span2">2</div>
+            <div class="col">1</div>
+            <div class="col span2">2</div>
+            <div class="col span2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam deleniti distinctio dolorem dolores ducimus ea eius, facere ipsam minima necessitatibus nulla officiis porro quos rem repellat vel. Dolorum, eaque.</div>
+            <div class="col">1</div>
+            <div class="col span4">4</div>
+        </div>
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col span2">2</div>
+            <div class="col span2">2</div>
+            <div class="col">1</div>
+            <div class="col span4">4</div>
+            <div class="col span2">2</div>
+        </div>
+    </div>
+</body>
+</html>
