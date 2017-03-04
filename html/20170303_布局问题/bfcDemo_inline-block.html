@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .left {
+            width: 400px;
+            height: 200px;
+            background-color: #33acfe;
+        }
+        .right {
+            width: 400px;
+            height: 200px;
+            background-color: #ee5523;
+        }
+        .container {
+            font-size: 0;
+        }
+        .l1 {
+            display: inline-block;
+        }
+        .r1 {
+            display: inline-block;
+        }
+        .l2 {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h4>Demo1</h4>
+    <div class="container">
+        <div class="left l1"></div>
+        <div class="right r1"></div>
+    </div>
+    <pre>
+        使用inline-block时:
+        由于盒变成内联级盒，所以盒与盒之间的任何字符，空白符，回车，换行，都会呈现在页面上，如上面例子中，左右两个盒子的间隙，由标签换行产生。
+        解决方法：
+        标签不换行，缺点文档结构可读性差。
+        设置包含内联盒的内联上下文文字大小为0，缺点不能直接在内联盒子中输入文字。所以只适用于布局，在输入文字外面嵌套一层新的盒子，即可解决
+    </pre>
+    <h4>Demo2</h4>
+    <!--测试内联级盒，是否可以浮动-->
+    <div class="container">
+        <div class="left l2"></div>
+        <div class="right r2"></div>
+    </div>
+</body>
+</html>
