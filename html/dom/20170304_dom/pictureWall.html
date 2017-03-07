@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+    <style>
+        #pic {
+            max-width: 640px;
+            max-height: 360px;
+            padding: 10px;
+            border: 2px solid gray;
+        }
+        .nav {
+            padding: 0;
+            list-style: none;
+        }
+        .nav>li{
+
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Snapshots</h2>
+    <nav>
+        <ul class="nav">
+            <li>
+                <a href="/work/resource/dog.jpg" title="有所渴望的狗？">狗</a>
+            </li>
+            <li>
+                <a href="/work/resource/miao.jpg" title="好奇心大于一切的猫">猫</a>
+            </li>
+            <li>
+                <a href="/work/resource/waiboguai.jpg" title="are you ok？">歪脖怪</a>
+            </li>
+            <li>
+                <a href="/work/resource/xiangxiang.jpg" title="不要打搅我的美梦">睡觉</a>
+            </li>
+        </ul>
+    </nav>
+    <article>
+        <img id="pic" src="" alt="">
+        <p id="describe">Choose an image</p>
+    </article>
+    <script>
+        var aTags = document.getElementsByTagName("a");
+        var img = document.getElementById("pic");
+        var p = document.getElementById("describe");
+        for (var i = 0; i < aTags.length; i++){
+            aTags[i].addEventListener("click", function(e){
+                e.preventDefault();
+                var href = this.getAttribute("href");
+                var title = this.getAttribute("title");
+                img.setAttribute("src", href);
+                p.firstChild.nodeValue = title;
+            })
+        }
+//        var ul = document.getElementsByTagName("ul")[0];
+//        ul.addEventListener("click", function (e){
+//            console.log(this.);
+//            e.preventDefault()
+//        })
+    </script>
+</body>
+</html>

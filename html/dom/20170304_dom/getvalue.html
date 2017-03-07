@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .goodDay{
+            height: 100px;
+            width: 300px;
+            background-color: #ee5523;
+        }
+    </style>
+</head>
+<body>
+    <div class="goodDay" id="happy">123 <span>666</span>   </div>
+    <script>
+        var div = document.getElementById("happy");
+        console.log(div.firstChild.nodeValue);
+        console.log(div.className);
+        console.log(div.id);
+        console.log(div.innerHTML);
+        console.log(div.textContent);
+        var body = document.getElementsByTagName("body")[0];
+        for(var i = 0; i < body.childNodes.length; i++){
+            console.log(body.childNodes[i].nodeType);
+        }
+    </script>
+</body>
+</html>
