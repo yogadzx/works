@@ -8,6 +8,18 @@
 <script>
     //查询对象中的属性值时，会从当前对象顺着原型链向上查找。
     //赋值时，根据当前对象是否存在该属性，覆盖或创建新值。
+    function herit(o) {
+        if (!o || !o instanceof Object) return false;
+        function f() {};
+        f.prototype = o;
+        return new f();
+    }
+    var origin = {
+        name : "dzx",
+        age : "23"
+    };
+    var child = herit(origin);
+    console.log(child.name)
 </script>
 </body>
 </html>
