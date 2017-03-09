@@ -8,6 +8,7 @@
     <h3>XMLHttprequest对象api</h3>
     <pre>
         request = new XMLHttpRequest()
+        request.withCredentails true可发送cookie ，false是默认值不能发送cookie,
         request.open("method","url",boolen) 第三个参数将决定是否异步，默认true，使用异步
         request.setRequestHeader() 设置请求头字段
         request.send()  发送数据给服务器

@@ -1,0 +1,6 @@
+.bfcContainer {
+    overflow: auto;
+}
+.bfcSelf {
+    display: inline-block;
+}
