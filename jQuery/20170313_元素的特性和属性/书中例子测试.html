@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-
+    <input type="checkbox" id="book" name="book" title="Check this!" book="jQuery in Action">
+    <script>
+        var checkbook = document.getElementById('book');
+        console.log(checkbook.getAttribute('checked'));
+        console.log(checkbook.checked);
+    </script>
 </body>
 </html>

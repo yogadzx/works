@@ -5,6 +5,32 @@
     <title>Title</title>
 </head>
 <body>
+    <div id="demo" title="dzx" age="23" class="jquery"></div>
+    <pre>
+        元素标签中的“属性”为属性。元素标签中没有写属性，使用属性方法无法获得undefined，但元素对象对应的特性依旧存在，可能为空，例如input中的checked 元素的class属性className特性。
+        标签转化为dom树中的节点对象中的“属性”为特性，同样特性方法无法获得自定义元素属性，例如标签中的data-*。
+        属性和特性 对应着 dom标准和非dom标准。
+        与属性规范的值重叠的特性，二者其一改变，另一个跟着改变。例如a元素的href属性对应的href特性。
+        jquery中使用attr()操作属性、prop()操作特性、data()操作自定义数据。
+        data()可以读写自定义数据
+        标签中使用自定义属性规范的data-*属性，可以通过data（*）找到。
+        data（）自定义的新属性不会出现在标签中。
+    </pre>
+    <script>
+        var div = document.getElementById("demo");
+        console.log(div.getAttribute("title"));
+        console.log(div.title);
+        console.log(div.title === div.getAttribute("title"));
+        div.title = "change name ddzx";
+        console.log(div.getAttribute("title"));
 
+        console.log(div.getAttribute("age"));
+        console.log(div.age);
+        console.log(div.age === div.getAttribute("age"));
+
+        console.log(div.getAttribute("class"));
+        console.log(div.className);
+        console.log(div.className === div.getAttribute("class"));
+    </script>
 </body>
 </html>

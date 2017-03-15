@@ -5,6 +5,43 @@
     <title>Title</title>
 </head>
 <body>
+    <input type="checkbox" id="demo" data-value="dzx" class="jq" last-value="10">
+    <a id="baidu">baidu</a>
+    <script src="/work/jquery-3.1.1.js"></script>
+    <script>
+        var a = $('#baidu');
+        a.prop('href',"http://www.baidu.com");
+        var $input = $('#demo');
+        console.log(a.attr('href'));
+        console.log(a.prop('href'));
 
+        var node = a[0].getAttributeNode('href');
+        a[0].removeAttributeNode(node);
+//        a[0].removeAttribute('href');
+
+        console.log(a.attr('href'));
+        console.log(a.prop('href'));
+
+
+        console.log($input.attr('type'));
+        console.log($input.prop('type'));
+
+        console.log($input.attr('data-value'));
+        console.log($input.prop('data-value'));
+        console.log($input.data('data-value'));
+
+        console.log($input.attr('checked'));
+        console.log($input.prop('checked'));
+        console.log($input.data('checked'));
+
+        console.log($input.attr('class'));
+        console.log($input.prop('className'));
+        console.log($input.data('class'));
+        console.log($input.data('className'));
+
+        console.log($input.data('last-value',20));
+        console.log($input.data('demo',333));
+        console.log($input.data())
+    </script>
 </body>
 </html>

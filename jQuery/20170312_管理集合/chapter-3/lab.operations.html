@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8" />
       <title>jQuery Operations Lab Page - jQuery in Action, 3rd edition</title>
-      <link rel="stylesheet" href="../css/main.css"/>
+      <link rel="stylesheet" href="../../css/main.css"/>
       <style>
          #results-pane
          {
@@ -75,12 +75,12 @@
          <pre id="sample-dom-source">
 &lt;span&gt;Some images:&lt;/span&gt;
 &lt;div&gt;
-   &lt;img src="../images/image.1.jpg" id="hibiscus" alt="Hibiscus"/&gt;
-   &lt;img src="../images/image.2.jpg" id="little-bear" title="A dog named Little Bear"/&gt;
-   &lt;img src="../images/image.3.jpg" id="verbena" alt="Verbena"/&gt;
-   &lt;img src="../images/image.4.jpg" id="cozmo" title="A puppy named Cozmo"/&gt;
-   &lt;img src="../images/image.5.jpg" id="tiger-lily" alt="Tiger Lily"/&gt;
-   &lt;img src="../images/image.6.jpg" id="coffee-pot"/&gt;
+   &lt;img src="../../images/image.1.jpg" id="hibiscus" alt="Hibiscus"/&gt;
+   &lt;img src="../../images/image.2.jpg" id="little-bear" title="A dog named Little Bear"/&gt;
+   &lt;img src="../../images/image.3.jpg" id="verbena" alt="Verbena"/&gt;
+   &lt;img src="../../images/image.4.jpg" id="cozmo" title="A puppy named Cozmo"/&gt;
+   &lt;img src="../../images/image.5.jpg" id="tiger-lily" alt="Tiger Lily"/&gt;
+   &lt;img src="../../images/image.6.jpg" id="coffee-pot"/&gt;
 &lt;/div&gt;
 
 &lt;div id="some-div"&gt;This is a &amp;lt;div&amp;gt; with an id of &lt;code&gt;some-div&lt;/code&gt;&lt;/div&gt;
@@ -171,18 +171,20 @@
          </p>
       </div>
 
-      <script src="../js/jquery-1.11.3.min.js"></script>
+      <script src="../../js/jquery-1.11.3.min.js"></script>
       <script>
          $('#form-selector').submit(function(event) {
             event.preventDefault();
 
             $('#resulting-elements').html('');
             var operation = $.trim($('#operation').val());
+            console.log(operation);
             if (operation.length == 0) {
                return false;
             }
-
+            console.log(frame);
             var $set = frame.perform(operation);
+            console.log($set);
             $('#resulting-elements-count').text($set.length);
             $set.each(function () {
                $('#resulting-elements').append(
