@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <section> <h3>操作jquery集合方法</h3>
+    <pre>
+        基本方法
+        $().index(jquery|dom)
+        $().length
+
+        返回dom
+        $()[n]
+        $().get(n)
+        $().toArray()
+
+        返回jquery对象,在选择器和方法都能实现的情况下，优先选择方法，可提高性能。
+        $().eq(n)
+        $().first()
+        $().last()
+        $().parent() 返回直接父节点的集合
+        $().closest(selector) 返回元素的最近的符合selector的父节点，类似parent，但parent（selector）会匹配所有符合的父节点返回集合，而不是最近的一个
+        $().parents(selector) 返回所有父节点直到html根元素的集合
+        $().offsetParent() 返回最近的固定节点集合
+        $().parentsUntil(selector) 返回元素直到selector以前的所有父节点
+        $().next()
+        $().prev()
+        $().siblings()
+        $().children(selector)
+        $().contents() 只返回元素内容
+        $().find(selector)
+
+        高级方法
+        $().add(selector)
+        $().has(selector)
+        $().is(selector)
+        $().not(selector)
+        $().filter(selector|fucntion)
+        $().end() 返回最近的 过滤方法 前的集合
+        $().addBack() 将当前过滤集合与过滤前集合合并
+        $().each(fucntion)
+        $().slice(起始位置，结束为止)
+
+    </pre>
+        <h3 id="demo">demo</h3>
+        <pre>demo</pre>
+    </section>
+
+    <script src="/work/jquery-3.1.1.js"></script>
+    <script>
+        console.log($('h3').index($('#demo')));
+        console.log($('h3').parents());
+    </script>
+</body>
+</html>

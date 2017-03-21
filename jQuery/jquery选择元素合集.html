@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .choice {
+            /*日本鸟居红 rgb(255,105,15)*/
+            background-color: #ff690f;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="header">选择操作元素</h2>
+    <pre>
+        使用jquery()方法返回的是一个jQuery对象合集，合集将dom元素封装并提供多种jQuery方法和属性。
+        事实证明$()选择器选中的集合想原生dom提供的queryselector一样，是dom的快照，不会随着文档结构变化而改变。
+    </pre>
+    <h3 id="basic" class="header">基本选择器</h3>
+    <pre>
+        通用选择器       : $('*');
+        id选择器         : $('#id');
+        class选择器      : $('.class');
+        元素选择器       : $('tag');
+        层级选择器       : $('div span');
+        属性选择器       : {
+                tag[attr]           :   元素有attr属性的集合,
+                tag[attr = name]    :   元素有aatr属性且值为name的集合,
+                tag[attr *= name]   :   元素有attr属性且属性值字段中 包含name 的集合，
+                tag[attr ~= name]   :   元素有attr属性且属性值中的包含name的字段 的集合，
+                tag[attr ^= name]   :   元素有attr属性且属性值包含的字段名第一个为name 的集合,
+                tag[attr $= name]   :   同上以name为结尾 的集合,
+                tag[attr |= name]   :   元素有attr属性且属性值为name或者name-开头的集合
+        }
+    </pre>
+    <h3>过滤器</h3>
+    <pre>
+        位置过滤器       : {
+            :first,
+            :last,
+            :even,
+            :odd,
+            :eq(n),
+            :gt(n),
+            :lt(n)
+        };
+        子过滤器         : {
+            :first-child,
+            :last-child,
+            :nth-child(),
+            :first-of-type,
+            :last-of-type
+        };
+        表单过滤器       : {
+            :checkbox,
+            :checked,
+            :disabled
+        };
+        内容过滤器       : {
+            :contains(text),
+            :has(selector),
+            :empty,
+            :parent(这里的parent不是选择器的parent节点而是选择器所选元素可作为parent节点，换而言之选择器元素包含子节点)，
+            :not(selector)
+        }
+    </pre>
+    <script src="/work/jquery-3.1.1.js"></script>
+    <script>
+        $('.header').addClass('choice');
+        var $headerBefore = $('*:header');
+        console.log($headerBefore);
+        $('body').append('<h3>新增标题</h3>');
+        console.log($headerBefore);
+    </script>
+</body>
+</html>
